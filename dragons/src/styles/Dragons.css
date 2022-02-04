@@ -1,0 +1,139 @@
+.dragonsPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgb(37, 37, 37);
+  background-image: url('../images/bg6.jpg');
+  background-size: cover;
+}
+
+.blackLogo {
+  position: fixed;
+  top: 110px;
+  width: 180px;
+}
+
+.dragonsBox {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  padding: 30px;
+  width: 500px;
+  height: 400px;
+  background-color: rgba(243, 243, 243, 0.781);
+  justify-content: center;
+  align-items: center;
+  /* filter: blur(20px); */
+  /* opacity: 75%; */
+}
+
+.dragonsWrapper {
+  margin-top: 30px;
+  height: 250px;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.dragonWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dragon {
+  height: 40px;
+  width: 320px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #e92b24;
+  padding: 0 15px;
+  /* margin: 5px 0; */
+  margin-bottom: 10px;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  margin-left: 15px;
+}
+
+.dragonName {
+  height: 20px;
+  max-width: 150px;
+  overflow: hidden;
+}
+
+.dragonButton {
+  height: 25px;
+  margin: 0 3px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.detailsButton {
+  background-color: #fad920;
+  color: rgb(12, 12, 12);
+}
+
+.editButton {
+  background-color: rgb(70, 178, 250);
+}
+
+.deleteButton {
+  cursor: pointer;
+  background-color: rgba(240, 248, 255, 0);
+  border: none;
+  height: 35px;
+  width: 30px;
+  margin-left: 10px;
+  margin-right: 15px;
+}
+
+.x {
+  height: 25px;
+  width: 30px;
+  margin-left: -10px;
+}
+
+.createButton {
+  cursor: pointer;
+  background-color: rgb(18, 194, 62);
+  border-radius: 8px;
+  border: none;
+  height: 35px;
+  width: 100px;
+  margin-left: -20px;
+  margin-top: 10px;
+  color: white;
+  font-weight: bold;
+}
+
+.createButton:hover {
+  width: 28%;
+}
+
+button {
+  transition: all 0.2s ease;
+}
+
+.dragonsWrapper::-webkit-scrollbar {
+  width: 7px; /* width of the entire scrollbar */
+}
+
+.dragonsWrapper::-webkit-scrollbar-track {
+  background: rgba(255, 166, 0, 0); /* color of the tracking area */
+}
+
+.dragonsWrapper::-webkit-scrollbar-thumb {
+  background-color: #e92b24;
+  border-radius: 20px; /* roundness of the scroll thumb */
+}
+
+.dragonsWrapper {
+  direction: rtl;
+}
+
+.dragonWrapper {
+  direction: ltr;
+}
