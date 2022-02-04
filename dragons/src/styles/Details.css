@@ -1,0 +1,30 @@
+.detailsPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgb(37, 37, 37);
+  background-image: url('../images/bg6.jpg');
+  background-size: cover;
+}
+
+.detailsBox {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  padding: 30px;
+  width: 500px;
+  height: 400px;
+  background-color: rgba(243, 243, 243, 0.781);
+  justify-content: center;
+  align-items: center;
+}
+
+.dragonBox {
+  font-weight: bolder;
+  color: white;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: rgb(218, 28, 28);
+  box-shadow: 9px 8px 3px -4px rgba(46, 45, 45, 0.555);
+}
