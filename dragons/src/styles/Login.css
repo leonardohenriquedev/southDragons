@@ -4,7 +4,9 @@
   align-items: center;
   width: 100vw;
   height: 100vh;
-  background-color: rgb(236, 236, 236);
+  background-color: rgb(31, 31, 31);
+  /* background-image: url('../images/bg13.jpg'); */
+  background-size: cover;
 }
 
 .inputLogin {
@@ -103,4 +105,10 @@ h2 {
 .linkedin {
   text-decoration: none;
   color: white;
+}
+
+@media screen and (max-width: 360px) {
+  .imageBox {
+    display: none;
+  }
 }
