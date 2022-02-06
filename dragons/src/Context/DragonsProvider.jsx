@@ -8,13 +8,15 @@ const PASSWORD = '123456';
 export default function DragonsProvider({ children }) {
   const [userEmail, setUserEmail] = useState([]);
   const [userPassword, setUserPassword] = useState([]);
+  const [music, setMusic] = useState(false);
 
   const [dragons, setDragons] = useState([]);
-  const [id, setId] = useState(16);
+  const [id, setId] = useState(Math.random().toString(16).substr(2));
 
   async function fetchDragons() {
     const dragons = await fetchDragonsAPI('/api/v1/dragon');
-    setDragons(dragons);
+    const sortedDragons = sortDragons(dragons);
+    setDragons(sortedDragons);
   }
 
   useEffect(() => {
@@ -25,11 +27,6 @@ export default function DragonsProvider({ children }) {
     fetchDragons();
   }, []);
 
-  useEffect(() => {
-    const sortedDragons = sortDragons(dragons);
-    setDragons(sortedDragons);
-  }, [dragons]);
-
   const contextValue = {
     dragons,
     setDragons,
@@ -37,6 +34,8 @@ export default function DragonsProvider({ children }) {
     userPassword,
     id,
     setId,
+    music,
+    setMusic,
   };
 
   return (
