@@ -3,14 +3,18 @@ import { useHistory } from 'react-router-dom';
 import NotFound from '../components/NotFound';
 import DragonsContext from '../Context/DragonsContext';
 import sortDragons from '../services/sortDragons';
+import Swal from 'sweetalert2';
+
+import logo from '../images/blackLogo.png';
+import '../styles/Create.css';
+import GoBack from '../components/GoBack';
 
 export default function Create() {
   const { dragons, setDragons, id, setId } = useContext(DragonsContext);
   const [name, setName] = useState('');
   const [type, setType] = useState('');
   const [history, setHistory] = useState('');
-  const [histories, setHistories] = useState([]);
-
+  
   function handleChange({ target: { value, name } }) {
     if (name === 'name') {
       setName(value);
@@ -25,9 +29,9 @@ export default function Create() {
 
   function handleSave() {
     let createdAt = new Date();
-    createdAt = `${createdAt.getFullYear()}-0${createdAt.getMonth() + 1}-0${
-      createdAt.getDay() - 1
-    }T${createdAt.getHours()}:${createdAt.getMinutes()}:${createdAt.getSeconds()}:${createdAt.getMilliseconds()}Z`;
+    createdAt = `${createdAt.getFullYear()}-0${
+      createdAt.getMonth() + 1
+    }-${createdAt.getDate()}T${createdAt.getHours()}:${createdAt.getMinutes()}:${createdAt.getSeconds()}:${createdAt.getMilliseconds()}Z`;
 
     const formated = name[0].toUpperCase() + name.substr(1);
 
@@ -35,7 +39,7 @@ export default function Create() {
       createdAt,
       name: formated,
       type,
-      histories,
+      histories: [history],
       id,
     };
 
@@ -44,40 +48,56 @@ export default function Create() {
     const sortedDragons = sortDragons(newDragons);
 
     setDragons(sortedDragons);
+    Swal.fire({
+      icon: 'success',
+      title: 'Dragão criado com sucesso',
+    });
     push('/dragons');
-  }
-
-  function handleHistories() {
-    setHistories([...histories, history]);
   }
 
   function renderPage() {
     return (
-      <div>
-        <div>
-          <label>
-            Nome:
-            <input name="name" onChange={handleChange} />
-          </label>
+      <div className="createBox">
+        <img className="blackLogo" src={logo} alt="logo" />
+        <div className="createWrapper">
+          <div>
+            <div>Nome:</div>
+            <input
+              className="createInput"
+              name="name"
+              onChange={handleChange}
+              autoComplete="off"
+            />
+          </div>
+          <div>
+            <div>Tipo:</div>
+            <input
+              className="createInput"
+              name="type"
+              onChange={handleChange}
+              autoComplete="off"
+            />
+          </div>
+          <div>
+            <div>Historia:</div>
+            <textarea
+              name="history"
+              onChange={handleChange}
+              className="historyInput"
+              maxLength="60"
+            />
+          </div>
         </div>
-        <div>
-          <label>
-            Tipo:
-            <input name="type" onChange={handleChange} />
-          </label>
+        <div className="createButtons">
+          <button
+            onClick={handleSave}
+            className="saveButton"
+            disabled={name.length < 2}
+          >
+            Salvar
+          </button>
+          <GoBack />
         </div>
-        <div>
-          <label>
-            Historia:
-            <input name="history" onChange={handleChange} />
-          </label>
-          <button onClick={handleHistories}>Adicionar Historia</button>
-        </div>
-        <div className="histories">
-          {histories.length > 0 &&
-            histories.map((history, index) => <p key={index}>{history}</p>)}
-        </div>
-        <button onClick={handleSave}>Salvar</button>
       </div>
     );
   }
