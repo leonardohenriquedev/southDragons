@@ -4,7 +4,7 @@
   align-items: center;
   height: 100vh;
   background-color: rgb(37, 37, 37);
-  background-image: url('../images/bg6.jpg');
+  background-image: url('../images/bg13.jpg');
   background-size: cover;
 }
 
@@ -21,7 +21,7 @@
   padding: 30px;
   width: 500px;
   height: 400px;
-  background-color: rgba(243, 243, 243, 0.781);
+  background-color: rgba(34, 32, 32, 0.63);
   justify-content: center;
   align-items: center;
   /* filter: blur(20px); */
@@ -47,7 +47,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #e92b24;
+  background-color: #d34808;
   padding: 0 15px;
   /* margin: 5px 0; */
   margin-bottom: 10px;
@@ -98,23 +98,42 @@
 
 .createButton {
   cursor: pointer;
-  background-color: rgb(18, 194, 62);
+  background-color: rgb(156, 194, 18);
   border-radius: 8px;
   border: none;
   height: 35px;
   width: 100px;
-  margin-left: -20px;
+  /* margin-left: -20px; */
   margin-top: 10px;
   color: white;
   font-weight: bold;
 }
 
+.logoutButton {
+  cursor: pointer;
+  background-color: rgb(230, 73, 11);
+  border-radius: 8px;
+  border: none;
+  height: 35px;
+  width: 100px;
+  /* margin-left: -20px; */
+  margin-top: 10px;
+  color: white;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.dragonsButtons {
+  display: flex;
+  width: 220px;
+}
+
 .createButton:hover {
-  width: 28%;
+  width: 80%;
 }
 
 button {
-  transition: all 0.2s ease;
+  transition: all 0.1s;
 }
 
 .dragonsWrapper::-webkit-scrollbar {
@@ -136,4 +155,26 @@ button {
 
 .dragonWrapper {
   direction: ltr;
+}
+
+@media screen and (max-width: 360px) {
+  .dragonsBox {
+    width: 100%;
+  }
+
+  .dragon {
+    height: 40px;
+    width: 280px;
+  }
+
+  .dragonName {
+    height: 20px;
+    max-width: 120px;
+    overflow: hidden;
+    /* border: 1px solid black; */
+  }
+
+  .dragonsWrapper {
+    margin-top: 60px;
+  }
 }
