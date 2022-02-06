@@ -3,6 +3,11 @@ import { useHistory } from 'react-router-dom';
 import NotFound from '../components/NotFound';
 import DragonsContext from '../Context/DragonsContext';
 import sortDragons from '../services/sortDragons';
+import logo from '../images/blackLogo.png';
+import Swal from 'sweetalert2';
+
+import '../styles/Edit.css';
+import GoBack from '../components/GoBack';
 
 export default function Edit(props) {
   const { dragons, setDragons } = useContext(DragonsContext);
@@ -49,37 +54,46 @@ export default function Edit(props) {
 
     const sortedDragons = sortDragons(newDragons);
     setDragons(sortedDragons);
+    Swal.fire({
+      icon: 'success',
+      title: 'Dragão editado com sucesso',
+    });
     push('/dragons');
   }
 
   function renderPage() {
     return (
       <div className="editBox">
+        <img className="blackLogo" src={logo} alt="logo" />
+
         {dragon.length > 0 && (
-          <div>
-            <div>
-              <label>
-                Nome:
-                <input
-                  name="name"
-                  defaultValue={dragon[0].name}
-                  onChange={handleChange}
-                />
-              </label>
+          <div className="edit">
+            <div className="inputWrapper">
+              <label>Nome:</label>
+              <input
+                name="name"
+                defaultValue={dragon[0].name}
+                onChange={handleChange}
+                className="editInput"
+              />
             </div>
-            <div>
-              <label>
-                Tipo:
-                <input
-                  name="type"
-                  defaultValue={dragon[0].type}
-                  onChange={handleChange}
-                />
-              </label>
+            <div className="inputWrapper">
+              <label>Tipo:</label>
+              <input
+                name="type"
+                defaultValue={dragon[0].type}
+                onChange={handleChange}
+                className="editInput"
+              />
             </div>
-            <button onClick={handleSave}>Salvar</button>
           </div>
         )}
+        <div className="editButtons">
+          <button className="saveButton" onClick={handleSave}>
+            Salvar
+          </button>
+          <GoBack />
+        </div>
       </div>
     );
   }
