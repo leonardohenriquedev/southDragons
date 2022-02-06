@@ -28,14 +28,19 @@ export default function Details(props) {
     return (
       <div className="detailsBox">
         <img className="blackLogo" src={logo} alt="logo" />
+        <div className="detailsWrapper">
+          {dragon.length > 0 && (
+            <div className="dragonBox">
+              <p>Nome: {dragon[0].name}</p>
+              <p>Tipo: {dragon[0].type}</p>
+              {dragon[0].histories[0] && (
+                <p className="history">{dragon[0].histories}</p>
+              )}
 
-        {dragon.length > 0 && (
-          <div className="dragonBox">
-            <p>Nome: {dragon[0].name}</p>
-            <p>Tipo: {dragon[0].type}</p>
-            <p>Criação: {dragon[0].createdAt}</p>
-          </div>
-        )}
+              <p>Criação: {dragon[0].createdAt}</p>
+            </div>
+          )}
+        </div>
         <GoBack />
       </div>
     );
