@@ -7,10 +7,12 @@ import logo from '../images/blackLogo.png';
 import x from '../images/x.png';
 import '../styles/Dragons.css';
 import Swal from 'sweetalert2';
+import ToggleMusic from '../components/ToggleMusic';
+import { pauseMusic } from '../services/HandleMusic';
 
 export default function Dragons() {
   const { push } = useHistory();
-  const { dragons, setDragons } = useContext(DragonsContext);
+  const { dragons, setDragons, setMusic } = useContext(DragonsContext);
 
   function handleEdit(id) {
     push(`edit/${id}`);
@@ -48,6 +50,8 @@ export default function Dragons() {
   }
 
   function logout() {
+    pauseMusic();
+    setMusic(false);
     localStorage.removeItem('logged');
     push('/');
   }
@@ -92,6 +96,7 @@ export default function Dragons() {
           <button className="logoutButton" onClick={logout}>
             Logout
           </button>
+          <ToggleMusic />
         </div>
       </div>
     );

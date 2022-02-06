@@ -3,11 +3,12 @@ import { useHistory } from 'react-router-dom';
 import LoginBox from '../components/LoginBox';
 import DragonsContext from '../Context/DragonsContext';
 import dragon from '../images/dragon.png';
+import { playMusic } from '../services/HandleMusic';
 
 import '../styles/Login.css';
 
 export default function Login() {
-  const { userEmail, userPassword, setLogged } = useContext(DragonsContext);
+  const { userEmail, userPassword, setMusic } = useContext(DragonsContext);
   const [emailIsValid, setEmailIsValid] = useState(false);
   const [passwordIsValid, setpasswordIsValid] = useState(false);
 
@@ -25,6 +26,9 @@ export default function Login() {
 
   const { push } = useHistory();
   function handleLogin() {
+    playMusic();
+    setMusic(true);
+
     localStorage.setItem('logged', true);
     push('/dragons');
   }
