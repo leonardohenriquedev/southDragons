@@ -3,11 +3,11 @@ import { useHistory } from 'react-router-dom';
 import NotFound from '../components/NotFound';
 import DragonsContext from '../Context/DragonsContext';
 import sortDragons from '../services/sortDragons';
+import GoBack from '../components/GoBackButton';
 import logo from '../images/blackLogo.png';
 import Swal from 'sweetalert2';
 
 import '../styles/Edit.css';
-import GoBack from '../components/GoBack';
 
 export default function Edit(props) {
   const { dragons, setDragons } = useContext(DragonsContext);

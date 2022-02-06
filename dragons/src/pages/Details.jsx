@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import GoBack from '../components/GoBack';
+import GoBack from '../components/GoBackButton';
 import NotFound from '../components/NotFound';
 import DragonsContext from '../Context/DragonsContext';
 import logo from '../images/blackLogo.png';
@@ -13,7 +13,7 @@ export default function Details(props) {
 
   useEffect(() => {
     const currentDragon = dragons.filter(
-      (dragon) => Number(dragon.id) === Number(id)
+      (dragon) => String(dragon.id) === String(id)
     );
     setDragon(currentDragon);
   }, [dragons]);

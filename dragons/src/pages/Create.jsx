@@ -7,14 +7,14 @@ import Swal from 'sweetalert2';
 
 import logo from '../images/blackLogo.png';
 import '../styles/Create.css';
-import GoBack from '../components/GoBack';
+import GoBack from '../components/GoBackButton';
 
 export default function Create() {
   const { dragons, setDragons, id, setId } = useContext(DragonsContext);
   const [name, setName] = useState('');
   const [type, setType] = useState('');
   const [history, setHistory] = useState('');
-  
+
   function handleChange({ target: { value, name } }) {
     if (name === 'name') {
       setName(value);
@@ -43,7 +43,7 @@ export default function Create() {
       id,
     };
 
-    setId(id + 1);
+    setId(Math.random().toString(16).substr(2));
     const newDragons = [...dragons, newObject];
     const sortedDragons = sortDragons(newDragons);
 
