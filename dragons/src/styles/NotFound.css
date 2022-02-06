@@ -1,0 +1,22 @@
+.notFoundBox {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  padding: 30px;
+  width: 500px;
+  height: 400px;
+  background-color: rgba(34, 32, 32, 0.63);
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.signIn{
+  width: 300px;
+  margin-bottom: -30px;
+}
+
+.mustBeLoggedIn{
+  margin: 0;
+  text-align: center;
+}
