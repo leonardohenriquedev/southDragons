@@ -5,8 +5,9 @@
   border: none;
   height: 35px;
   width: 100px;
-  margin-left: -20px;
-  margin-top: 30px;
+  /* margin-left: -20px; */
+  /* margin-top: 30px; */
+  margin-top: 10px;
   color: white;
   font-weight: bold;
 }
