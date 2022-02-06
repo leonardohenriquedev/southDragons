@@ -40,7 +40,7 @@ export default function LoginBox(props) {
           Entrar
         </button>
       </div>
-      <p className="developedWrapper">
+      <div className="developedWrapper">
         <p className="developed">Desenvolvido por</p>
         <a
           className="linkedin"
@@ -50,7 +50,7 @@ export default function LoginBox(props) {
         >
           <b>Leonardo Henrique</b>
         </a>
-      </p>
+      </div>
     </div>
   );
 }
