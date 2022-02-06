@@ -48,7 +48,15 @@ export default function LoginBox(props) {
           target="_blank"
           rel="noreferrer"
         >
-          <b>Leonardo Henrique</b>
+          Leonardo Henrique
+        </a>
+        <a
+          href="https://github.com/leonardohenriquedev/desafioSouthSystem/pull/1"
+          target="_blank"
+          rel="noreferrer"
+          className="repository"
+        >
+          Repositorio
         </a>
       </div>
     </div>
