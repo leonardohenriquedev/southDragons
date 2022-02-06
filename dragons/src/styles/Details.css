@@ -52,7 +52,7 @@
   border-radius: 20px; /* roundness of the scroll thumb */
 }
 
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 450px) {
   .dragonBox {
     width: 100%;
   }

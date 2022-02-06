@@ -90,6 +90,8 @@ h2 {
 }
 
 .developedWrapper {
+  display: flex;
+  flex-direction: column;
   margin-top: 20px;
   color: white;
   font-size: 13px;
@@ -105,9 +107,17 @@ h2 {
 .linkedin {
   text-decoration: none;
   color: white;
+  font-weight: bold;
 }
 
-@media screen and (max-width: 360px) {
+.repository {
+  margin-top: 6px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 450px) {
   .imageBox {
     display: none;
   }

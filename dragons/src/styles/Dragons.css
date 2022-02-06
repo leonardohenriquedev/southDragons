@@ -157,7 +157,7 @@ button {
   direction: ltr;
 }
 
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 450px) {
   .dragonsBox {
     width: 100%;
   }
