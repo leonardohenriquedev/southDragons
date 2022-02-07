@@ -1,7 +1,6 @@
 import { Route } from 'react-router-dom';
 import Player from './components/Player';
 import DragonsProvider from './Context/DragonsProvider';
-import CreateDragon from './pages/Create';
 import Details from './pages/Details';
 import Dragons from './pages/Dragons';
 import Edit from './pages/Edit';
@@ -19,7 +18,6 @@ function App() {
         path="/details/:id"
         render={(props) => <Details {...props} />}
       />
-      <Route exact path="/create" component={CreateDragon} />
     </DragonsProvider>
   );
 }
