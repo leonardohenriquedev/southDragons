@@ -1,3 +1,5 @@
+import React from 'react';
+import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 import { fetchDragons as fetchDragonsAPI } from '../services/fetchDragons';
 import sortDragons from '../services/sortDragons';
@@ -34,3 +36,7 @@ export default function DragonsProvider({ children }) {
     </DragonsContext.Provider>
   );
 }
+
+DragonsProvider.propTypes = {
+  children: PropTypes.component,
+}.isRequired;

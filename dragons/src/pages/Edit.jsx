@@ -1,5 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
+
 import DragonsContext from '../Context/DragonsContext';
 import Swal from 'sweetalert2';
 
@@ -106,3 +108,7 @@ export default function Edit(props) {
     </div>
   );
 }
+
+Edit.propTypes = {
+  id: PropTypes.number,
+}.isRequired;

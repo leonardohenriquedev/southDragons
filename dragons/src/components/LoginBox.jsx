@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import logo from '../images/whiteLogo.png';
 
@@ -62,3 +63,11 @@ export default function LoginBox(props) {
     </div>
   );
 }
+
+LoginBox.propTypes = {
+  emailIsValid: PropTypes.bool,
+  handleEmail: PropTypes.func,
+  handleLogin: PropTypes.func,
+  handlePassword: PropTypes.func,
+  passwordIsValid: PropTypes.bool,
+}.isRequired;
