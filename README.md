@@ -1,4 +1,4 @@
-# Desafio Front Dragon - Leonardo Henrique
+# Desafio Front Dragon - Leonardo Henrique (Júnior)
 
 # Acesso
 ### https://south-dragons.vercel.app/
