@@ -1,3 +1,4 @@
+import React from 'react';
 import { useEffect } from 'react';
 import music from '../songs/background.mp3';
 
