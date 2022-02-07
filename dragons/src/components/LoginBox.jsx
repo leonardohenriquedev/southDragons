@@ -56,7 +56,7 @@ export default function LoginBox(props) {
           rel="noreferrer"
           className="repository"
         >
-          Repositorio
+          Repositório 📦
         </a>
       </div>
     </div>
