@@ -1,25 +1,26 @@
 import React, { useContext, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import LoginBox from '../components/LoginBox';
 import DragonsContext from '../Context/DragonsContext';
-import dragon from '../images/dragon.png';
+
+import LoginBox from '../components/LoginBox';
 import { playMusic } from '../services/HandleMusic';
 
 import '../styles/Login.css';
+import dragon from '../images/dragon.png';
 
 export default function Login() {
-  const { userEmail, userPassword, setMusic } = useContext(DragonsContext);
+  const { setMusic } = useContext(DragonsContext);
   const [emailIsValid, setEmailIsValid] = useState(false);
   const [passwordIsValid, setpasswordIsValid] = useState(false);
 
   function handleEmail({ target: { value } }) {
-    if (value === userEmail) {
+    if (value === localStorage.getItem('userEmail')) {
       setEmailIsValid(true);
     } else setEmailIsValid(false);
   }
 
   function handlePassword({ target: { value } }) {
-    if (value === userPassword) {
+    if (value === localStorage.getItem('password')) {
       setpasswordIsValid(true);
     } else setpasswordIsValid(false);
   }

@@ -10,6 +10,12 @@ export default function Details(props) {
   const { dragons } = useContext(DragonsContext);
 
   const [dragon, setDragon] = useState([]);
+  
+  const {
+    match: {
+      params: { id },
+    },
+  } = props;
 
   useEffect(() => {
     const currentDragon = dragons.filter(
@@ -18,11 +24,6 @@ export default function Details(props) {
     setDragon(currentDragon);
   }, [dragons]);
 
-  const {
-    match: {
-      params: { id },
-    },
-  } = props;
 
   function renderPage() {
     return (
