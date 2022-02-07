@@ -1,40 +1,23 @@
-# Objetivo
-Criar uma aplicação que contenha:
-## Página de login:
-- Única página disponível se não estiver logado;
-- Criar um usuário básico para acesso.
+# Desafio Front Dragon - Leonardo Henrique
 
-## Uma página de lista de dragões:
-- Os nomes devem estar em ordem alfabética;
-- A partir da lista, deverá ser possível remover e alterar as informações dos dragões.
+# Acesso
+### https://south-dragons.vercel.app/
+### Email: tester@southsystem.com
+### Senha: 123456
 
-## Uma página com os detalhes de um dragão específico:
-Os seguintes dados devem ser apresentados na página:
-	- Data de criação;
-	- Nome;
-	- Tipo;
-  
-## Uma página para cadastro de dragões:
+## Criar uma aplicação que contenha:
+- [x] - Página de login:
+- [x] - Única página disponível se não estiver logado;
+- [x] - Criar um usuário básico para acesso.
+- [x] - Uma página de lista de dragões:
+- [x] - Os nomes devem estar em ordem alfabética;
+- [x] - A partir da lista, deverá ser possível remover e alterar as informações dos dragões.
+- [x] - Uma página com os detalhes de um dragão específico:
+- [x] - Os seguintes dados devem ser apresentados na página: - Data de criação; - Nome; - Tipo;
+- [x] - Uma página para cadastro de dragões:
 
-### Regras:
-- Layout responsivo;
-- Utilizar React ou Angular 4+ para o desenvolvimento;
-- Usar um sistema de controle de versão para entregar o teste (Github, Bitbucket, ...)
-- O uso de libs é livre.
-
-### O que será avaliado:
-- Organização do código;
-- Componentização das páginas;
-- Interface organizada e amigável;
-- Uso adequado do css (ou alguma biblioteca).
-
-## API
-http://5c4b2a47aa8ee500142b4887.mockapi.io/api/v1/dragon
-* Lista de dragões: GET .../api/v1/dragon
-* Detalhes de dragões: GET .../api/v1/dragon/:id
-* Criação de um dragão: POST .../api/v1/dragon
-* Edição de um dragão: PUT .../api/v1/dragon/:id
-* Deleção de um dragão: DELETE .../api/v1/dragon/:id
-
-Bom teste!
-
+## Regras:
+- [x] Layout responsivo;
+- [x] Utilizar React ou Angular 4+ para o desenvolvimento;
+- [x] Usar um sistema de controle de versão para entregar o teste (Github, Bitbucket, ...)
+- [x] O uso de libs é livre.
