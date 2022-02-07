@@ -1,0 +1,72 @@
+.detailsPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgb(37, 37, 37);
+  background-image: url('../images/bg13.jpg');
+  background-size: cover;
+  animation-name: fade;
+  animation-duration: 1s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
+.detailsBox {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  width: 500px;
+  height: 400px;
+  background-color: rgba(34, 32, 32, 0.63);
+  justify-content: center;
+  align-items: center;
+  animation-name: fade;
+  animation-duration: 1s;
+}
+
+.dragonBox {
+  font-weight: bolder;
+  color: white;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #d34808;
+  box-shadow: 9px 8px 3px -4px rgba(46, 45, 45, 0.555);
+}
+
+.detailsWrapper {
+  margin-top: 30px;
+  height: 250px;
+}
+
+.history {
+  width: 300px;
+  height: 60px;
+  overflow-y: scroll;
+}
+
+.history::-webkit-scrollbar {
+  width: 7px; /* width of the entire scrollbar */
+}
+
+.history::-webkit-scrollbar-track {
+  background: rgba(255, 166, 0, 0); /* color of the tracking area */
+}
+
+.history::-webkit-scrollbar-thumb {
+  background-color: #2b2b2ba8;
+  border-radius: 20px; /* roundness of the scroll thumb */
+}
+
+@media screen and (max-width: 450px) {
+  .dragonBox {
+    width: 100%;
+  }
+}

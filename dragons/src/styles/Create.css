@@ -1,0 +1,80 @@
+.createPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgb(37, 37, 37);
+  background-image: url('../images/bg13.jpg');
+  background-size: cover;
+  animation-name: fade;
+  animation-duration: 1s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
+.createBox {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  padding: 30px;
+  width: 500px;
+  height: 400px;
+  background-color: rgba(34, 32, 32, 0.63);
+  justify-content: center;
+  align-items: center;
+  animation-name: fade;
+  animation-duration: 1s;
+}
+
+.createInput {
+  width: 180px;
+  padding: 8px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  height: 30px;
+  margin: 3px 0;
+  background-color: rgb(241, 241, 241);
+}
+
+.createWrapper {
+  font-weight: bolder;
+  color: white;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: rgb(218, 28, 28);
+  box-shadow: 9px 8px 3px -4px rgba(46, 45, 45, 0.555);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.historyInput {
+  width: 180px;
+  height: 50px;
+  max-width: 180px;
+  max-height: 50px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+
+.createButtons {
+  width: 220px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.saveButton:disabled {
+  background-color: rgba(133, 133, 133, 0.801);
+  cursor: default;
+}

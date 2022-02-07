@@ -1,0 +1,88 @@
+.editPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgb(37, 37, 37);
+  background-image: url('../images/bg13.jpg');
+  background-size: cover;
+  animation-name: fade;
+  animation-duration: 1s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
+.editBox {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  padding: 30px;
+  width: 500px;
+  height: 400px;
+  background-color: rgba(34, 32, 32, 0.63);
+  justify-content: center;
+  align-items: center;
+  animation-name: fade;
+  animation-duration: 1s;
+}
+
+.edit {
+  font-weight: bolder;
+  color: white;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: rgb(218, 28, 28);
+  box-shadow: 9px 8px 3px -4px rgba(46, 45, 45, 0.555);
+}
+
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.editInput {
+  width: 180px;
+  padding: 8px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  height: 30px;
+  margin: 3px 0;
+  background-color: rgb(241, 241, 241);
+}
+
+.saveButton {
+  cursor: pointer;
+  background-color: rgb(18, 194, 62);
+  border-radius: 8px;
+  border: none;
+  height: 35px;
+  width: 100px;
+  margin-top: 10px;
+  color: white;
+  font-weight: bold;
+}
+
+.saveButton:hover {
+  width: 100%;
+}
+
+.goBack:hover {
+  width: 65%;
+}
+
+.editButtons {
+  margin-top: 50px;
+  width: 220px;
+  /* border: 1px solid black; */
+  display: flex;
+  justify-content: space-between;
+  /* align-items: ; */
+}
