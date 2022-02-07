@@ -1,14 +1,20 @@
 import React, { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
-import NotFound from '../components/NotFound';
+import Swal from 'sweetalert2';
 import DragonsContext from '../Context/DragonsContext';
+
+import NotFound from '../components/NotFound';
+import ToggleMusic from '../components/ToggleMusic';
+
 import sortDragons from '../services/sortDragons';
+import { pauseMusic } from '../services/HandleMusic';
+import postDragon from '../services/postDragon';
+import { fetchDragons } from '../services/fetchDragons';
+import deleteDragon from '../services/deleteDragon';
+
 import logo from '../images/blackLogo.png';
 import x from '../images/x.png';
 import '../styles/Dragons.css';
-import Swal from 'sweetalert2';
-import ToggleMusic from '../components/ToggleMusic';
-import { pauseMusic } from '../services/HandleMusic';
 
 export default function Dragons() {
   const { push } = useHistory();
@@ -22,13 +28,20 @@ export default function Dragons() {
     push(`details/${id}`);
   }
 
-  function handleCreate() {
-    push(`/create`);
+  async function handleCreate() {
+    const dragon = await postDragon();
+    const newDragons = await fetchDragons('api/v1/dragon');
+    const sortedDragons = sortDragons(newDragons);
+    setDragons(sortedDragons);
+    Swal.fire({
+      icon: 'success',
+      title: `Dragão ${dragon.name} criado com sucesso! 🥳`,
+    });
   }
 
-  function handleRemove(dragon) {
+  async function handleRemove(dragon) {
     Swal.fire({
-      title: `Tem certeza que quer excluir o dragão ${dragon.name}?`,
+      title: `Tem certeza que quer excluir o dragão ${dragon.name}? 🥺`,
       text: 'Esta ação nao pode ser revertida!',
       icon: 'warning',
       showCancelButton: true,
@@ -39,6 +52,7 @@ export default function Dragons() {
     }).then((result) => {
       if (result.isConfirmed) {
         Swal.fire('Excluido!', `Até breve ${dragon.name}!`, 'success');
+        deleteDragon(dragon.id);
         const newDragons = dragons.filter(
           (currentDragon) => currentDragon !== dragon
         );
@@ -46,7 +60,6 @@ export default function Dragons() {
         setDragons(sortedDragons);
       }
     });
-    // const newDragons = dragons;
   }
 
   function logout() {

@@ -1,13 +1,17 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import NotFound from '../components/NotFound';
 import DragonsContext from '../Context/DragonsContext';
-import sortDragons from '../services/sortDragons';
-import GoBack from '../components/GoBackButton';
-import logo from '../images/blackLogo.png';
 import Swal from 'sweetalert2';
 
+import NotFound from '../components/NotFound';
+import GoBack from '../components/GoBackButton';
+
+import { fetchDragons } from '../services/fetchDragons';
+import putDragon from '../services/putDragon';
+import sortDragons from '../services/sortDragons';
+
 import '../styles/Edit.css';
+import logo from '../images/blackLogo.png';
 
 export default function Edit(props) {
   const { dragons, setDragons } = useContext(DragonsContext);
@@ -35,28 +39,26 @@ export default function Edit(props) {
   }
 
   const { push } = useHistory();
-  function handleSave() {
-    const newDragons = dragons;
+  async function handleSave() {
+    let newDragon = dragon[0];
 
-    newDragons.forEach((currentDragon) => {
-      if (currentDragon.id === dragon[0].id) {
-        if (name.length > 0) {
-          const formated = name[0].toUpperCase() + name.substr(1);
-          currentDragon.name = formated;
-        } else if (type.length > 0) {
-          currentDragon.type = type;
-        } else {
-          currentDragon.name = dragon[0].name;
-          currentDragon.type = dragon[0].type;
-        }
-      }
-    });
+    if (name.length > 0) {
+      newDragon.name = name;
+    }
+
+    if (type.length > 0) {
+      newDragon.type = type;
+    }
+
+    await putDragon(newDragon);
+
+    const newDragons = await fetchDragons('api/v1/dragon');
 
     const sortedDragons = sortDragons(newDragons);
     setDragons(sortedDragons);
     Swal.fire({
       icon: 'success',
-      title: 'Dragão editado com sucesso',
+      title: `Dragão ${newDragon.name} editado com sucesso!`,
     });
     push('/dragons');
   }
