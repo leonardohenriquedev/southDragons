@@ -20,6 +20,15 @@
   background-color: rgb(241, 241, 241);
 }
 
+@keyframes fade {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
 .loginBox {
   width: 250px;
   display: flex;
@@ -28,6 +37,8 @@
   border-radius: 5px;
   background-color: rgb(216, 0, 0);
   z-index: 1;
+  animation-name: fade;
+  animation-duration: 1s;
 }
 
 .buttonLogin:disabled {
@@ -71,6 +82,8 @@ h2 {
 .imageBox {
   margin-left: -70px;
   z-index: 5;
+  animation-name: fade;
+  animation-duration: 3s;
 }
 
 .logo {

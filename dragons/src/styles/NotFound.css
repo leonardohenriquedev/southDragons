@@ -1,3 +1,12 @@
+@keyframes fade {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
 .notFoundBox {
   display: flex;
   flex-direction: column;
@@ -9,14 +18,16 @@
   justify-content: center;
   align-items: center;
   color: white;
+  animation-name: fade;
+  animation-duration: 1s;
 }
 
-.signIn{
+.signIn {
   width: 300px;
   margin-bottom: -30px;
 }
 
-.mustBeLoggedIn{
+.mustBeLoggedIn {
   margin: 0;
   text-align: center;
 }
