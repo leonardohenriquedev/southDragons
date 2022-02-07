@@ -1,4 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
+
 import GoBack from '../components/GoBackButton';
 import NotFound from '../components/NotFound';
 import DragonsContext from '../Context/DragonsContext';
@@ -6,16 +8,14 @@ import logo from '../images/blackLogo.png';
 
 import '../styles/Details.css';
 
-export default function Details(props) {
+export default function Details({
+  match: {
+    params: { id },
+  },
+}) {
   const { dragons } = useContext(DragonsContext);
 
   const [dragon, setDragon] = useState([]);
-  
-  const {
-    match: {
-      params: { id },
-    },
-  } = props;
 
   useEffect(() => {
     const currentDragon = dragons.filter(
@@ -23,7 +23,6 @@ export default function Details(props) {
     );
     setDragon(currentDragon);
   }, [dragons]);
-
 
   function renderPage() {
     return (
@@ -53,3 +52,7 @@ export default function Details(props) {
     </div>
   );
 }
+
+Details.propTypes = {
+  id: PropTypes.number,
+}.isRequired;

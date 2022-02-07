@@ -1,3 +1,4 @@
+import React from 'react';
 import { Route } from 'react-router-dom';
 import Player from './components/Player';
 import DragonsProvider from './Context/DragonsProvider';
