@@ -3,7 +3,7 @@ import DragonsContext from '../Context/DragonsContext';
 import { pauseMusic, playMusic } from '../services/HandleMusic';
 import mute from '../images/soundOn.png';
 import unmute from '../images/soundOff.png';
-import '../styles/SongButton.css'
+import '../styles/SongButton.css';
 
 export default function ToggleMusic() {
   const { music, setMusic } = useContext(DragonsContext);

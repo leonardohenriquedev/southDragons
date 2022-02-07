@@ -6,12 +6,8 @@ const EMAIL = 'tester@southsystem.com';
 const PASSWORD = '123456';
 
 export default function DragonsProvider({ children }) {
-  const [userEmail, setUserEmail] = useState([]);
-  const [userPassword, setUserPassword] = useState([]);
-  const [music, setMusic] = useState(false);
-
   const [dragons, setDragons] = useState([]);
-  const [id, setId] = useState(Math.random().toString(16).substr(2));
+  const [music, setMusic] = useState(false);
 
   async function fetchDragons() {
     const dragons = await fetchDragonsAPI('/api/v1/dragon');
@@ -22,18 +18,12 @@ export default function DragonsProvider({ children }) {
   useEffect(() => {
     localStorage.setItem('userEmail', EMAIL);
     localStorage.setItem('password', PASSWORD);
-    setUserEmail(EMAIL);
-    setUserPassword(PASSWORD);
     fetchDragons();
   }, []);
 
   const contextValue = {
     dragons,
     setDragons,
-    userEmail,
-    userPassword,
-    id,
-    setId,
     music,
     setMusic,
   };
