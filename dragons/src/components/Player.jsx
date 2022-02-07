@@ -3,7 +3,7 @@ import music from '../songs/background.mp3';
 
 function Player() {
   useEffect(() => {
-    document.getElementById('backgroundMusic').currentTime = 2.7;
+    document.getElementById('backgroundMusic').currentTime = 1.7;
   }, []);
   return (
     <div className="player">
