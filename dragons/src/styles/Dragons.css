@@ -184,10 +184,16 @@ button {
     height: 20px;
     max-width: 120px;
     overflow: hidden;
-    /* border: 1px solid black; */
   }
 
   .dragonsWrapper {
     margin-top: 60px;
+  }
+
+  .blackLogo {
+    position: relative;
+    margin-bottom: -120px;
+    top: -80px;
+    width: 180px;
   }
 }
