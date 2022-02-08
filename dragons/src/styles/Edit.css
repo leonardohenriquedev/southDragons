@@ -58,6 +58,12 @@
   background-color: rgb(241, 241, 241);
 }
 
+.editBlackLogo {
+  position: relative;
+  top: -70px;
+  width: 180px;
+}
+
 .saveButton {
   cursor: pointer;
   background-color: rgb(18, 194, 62);

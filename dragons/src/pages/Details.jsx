@@ -27,7 +27,7 @@ export default function Details({
   function renderPage() {
     return (
       <div className="detailsBox">
-        <img className="blackLogo" src={logo} alt="logo" />
+        <img className="detailBlackLogo" src={logo} alt="logo" />
         <div className="detailsWrapper">
           {dragon.length > 0 && (
             <div className="dragonBox">

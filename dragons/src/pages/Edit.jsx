@@ -68,7 +68,7 @@ export default function Edit(props) {
   function renderPage() {
     return (
       <div className="editBox">
-        <img className="blackLogo" src={logo} alt="logo" />
+        <img className="editBlackLogo" src={logo} alt="logo" />
 
         {dragon.length > 0 && (
           <div className="edit">
