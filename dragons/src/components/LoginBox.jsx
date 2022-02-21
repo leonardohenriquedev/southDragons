@@ -21,6 +21,7 @@ export default function LoginBox(props) {
             type="email"
             onChange={handleEmail}
             className="inputLogin"
+            defaultValue="tester@southsystem.com"
           ></input>
         </div>
 
@@ -31,6 +32,7 @@ export default function LoginBox(props) {
             onChange={handlePassword}
             className="inputLogin"
             autoComplete="off"
+            defaultValue="123456"
           ></input>
         </div>
         <button
