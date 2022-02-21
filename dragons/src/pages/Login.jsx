@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import DragonsContext from '../Context/DragonsContext';
 
@@ -10,20 +10,41 @@ import dragon from '../images/dragon.png';
 
 export default function Login() {
   const { setMusic } = useContext(DragonsContext);
+  const [email, setEmail] = useState('tester@southsystem.com');
+  const [password, setPassword] = useState('123456');
+
   const [emailIsValid, setEmailIsValid] = useState(false);
   const [passwordIsValid, setpasswordIsValid] = useState(false);
 
   function handleEmail({ target: { value } }) {
-    if (value === localStorage.getItem('userEmail')) {
-      setEmailIsValid(true);
-    } else setEmailIsValid(false);
+    setEmail(value);
   }
 
   function handlePassword({ target: { value } }) {
-    if (value === localStorage.getItem('password')) {
+    setPassword(value);
+  }
+
+  useEffect(() => {
+    if (email === localStorage.getItem('userEmail')) {
+      setEmailIsValid(true);
+    } else setEmailIsValid(false);
+  }, [email]);
+
+  useEffect(() => {
+    if (password === localStorage.getItem('password')) {
       setpasswordIsValid(true);
     } else setpasswordIsValid(false);
-  }
+  }, [password]);
+
+  useEffect(() => {
+    if (email === 'tester@southsystem.com') {
+      setEmailIsValid(true);
+    } else setEmailIsValid(false);
+
+    if (password === '123456') {
+      setpasswordIsValid(true);
+    } else setpasswordIsValid(false);
+  }, []);
 
   const { push } = useHistory();
   function handleLogin() {
