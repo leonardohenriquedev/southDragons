@@ -36,6 +36,16 @@ export default function Login() {
     } else setpasswordIsValid(false);
   }, [password]);
 
+  useEffect(() => {
+    if (email === 'tester@southsystem.com') {
+      setEmailIsValid(true);
+    } else setEmailIsValid(false);
+
+    if (password === '123456') {
+      setpasswordIsValid(true);
+    } else setpasswordIsValid(false);
+  }, []);
+
   const { push } = useHistory();
   function handleLogin() {
     playMusic();
