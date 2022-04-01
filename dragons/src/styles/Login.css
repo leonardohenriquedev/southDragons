@@ -115,12 +115,14 @@ h2 {
 
 .developed {
   margin: 0;
+  font-size: 12px;
 }
 
 .linkedin {
   text-decoration: none;
   color: white;
   font-weight: bold;
+  font-size: 12px;
 }
 
 .repository {
@@ -128,6 +130,7 @@ h2 {
   text-decoration: none;
   color: white;
   font-weight: bold;
+  font-size: 12px;
 }
 
 @media screen and (max-width: 450px) {
